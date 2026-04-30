@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fayans & Seramik | Aura Seramik</title>
+    <meta
+      name="description"
+      content="Profesyonel fayans döşeme, banyo ve mutfak yenileme. Modern seramik uygulamaları için WhatsApp'tan iletişime geçin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              anthracite: {
+                DEFAULT: "#121315",
+                soft: "#1a1c20",
+                elevated: "#22252b",
+              },
+              brass: {
+                DEFAULT: "#b8956e",
+                light: "#d4bc94",
+                deep: "#7d5f3f",
+              },
+              cream: "#f4f2ef",
+              paper: "#faf8f6",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+              display: ["Cormorant Garamond", "Georgia", "serif"],
+            },
+            boxShadow: {
+              luxe: "0 32px 90px rgba(18,19,21,0.14)",
+              hover: "0 20px 50px rgba(18,19,21,0.08)",
+              innerGold: "inset 0 1px 0 rgba(212,188,148,0.45)",
+              ringSoft: "0 0 0 1px rgba(184,149,110,0.12)",
+            },
+            transitionTimingFunction: {
+              outExpo: "cubic-bezier(0.16, 1, 0.3, 1)",
+            },
+            animation: {
+              "fade-up": "fadeUp 0.8s ease-out forwards",
+              shimmer: "shimmer 2.5s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeUp: {
+                from: { opacity: "0", transform: "translateY(20px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              shimmer: {
+                "0%, 100%": { opacity: "0.55" },
+                "50%": { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-balance {
+          text-wrap: balance;
+        }
+      }
+    </style>
+    <style>
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Hero carousel */
+      .hero-slide {
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hero-slide.active {
+        opacity: 1;
+      }
+
+      /* Main slider track */
+      .slider-track {
+        transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .slider-track.no-motion {
+        transition: none;
+      }
+
+      html[data-motion="reduce"] .slider-track,
+      html[data-motion="reduce"] .hero-slide {
+        transition-duration: 0.01ms;
+      }
+
+      .slide-caption-bar {
+        background: linear-gradient(90deg, rgba(18, 19, 21, 0.92), rgba(18, 19, 21, 0.72));
+      }
+
+      /* Decorative mesh */
+      .mesh-bg {
+        background-image:
+          radial-gradient(at 80% 0%, rgba(184, 149, 110, 0.12) 0, transparent 50%),
+          radial-gradient(at 0% 90%, rgba(18, 19, 21, 0.06) 0, transparent 45%);
+      }
+
+      html {
+        scroll-padding-top: 6.5rem;
+      }
+
+      /* WhatsApp butonu — dikkat çekici nabız halkası */
+      @keyframes wa-pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+      .wa-float-pulse {
+        animation: wa-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .wa-float-pulse {
+          animation: none;
+        }
+      }
+
+      #sticky-quote-bar {
+        transform: translateY(100%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #sticky-quote-bar.is-visible {
+        transform: translateY(0);
+      }
+    </style>
+    <!-- Tek yerden numara: WA_CHAT_URL güncelleyin -->
+    <script>
+      window.WA_CHAT_URL =
+        "https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
+    </script>
+  </head>
+  <body
+    class="bg-paper pb-24 text-anthracite antialiased selection:bg-brass-light/35 selection:text-anthracite sm:pb-[4.5rem]"
+  >
+    <a
+      id="wa-float"
+      href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="wa-cta wa-float-pulse fixed bottom-[4.75rem] right-4 z-[100] flex size-[3.35rem] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_40px_rgba(37,211,102,0.42)] ring-4 ring-[#bdf7cf] transition hover:scale-105 hover:shadow-[0_16px_48px_rgba(37,211,102,0.5)] sm:bottom-28 sm:right-7 sm:size-[3.65rem]"
+      aria-label="WhatsApp ile hemen teklif yazın"
+    >
+      <i class="fa-brands fa-whatsapp text-[1.65rem] sm:text-[1.85rem]" aria-hidden="true"></i>
+    </a>
+
+    <!-- Kaydırınca: altta sabit teklif şeridi -->
+    <div
+      id="sticky-quote-bar"
+      class="fixed inset-x-0 bottom-0 z-[95] flex translate-y-full items-center justify-center gap-3 border-t border-black/10 bg-white/95 px-4 py-3 shadow-[0_-8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md"
+      role="region"
+      aria-label="Hızlı teklif"
+    >
+      <span class="hidden text-[13px] font-semibold text-anthracite/80 sm:inline">Bugün yazın — yarın yerinde keşfe gelelim.</span>
+      <span class="inline text-[12px] font-semibold text-anthracite sm:hidden">Teklif için</span>
+      <a
+        href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+        class="wa-cta inline-flex shrink-0 items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-white shadow-md transition hover:bg-[#20bd5a]"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+        WhatsApp’tan yaz
+      </a>
+    </div>
+
+    <!-- Üst uyarı şeridi + header (sabit) -->
+    <div class="fixed left-0 right-0 top-0 z-[110]">
+      <div
+        class="flex items-center justify-center gap-2 border-b border-brass/20 bg-gradient-to-r from-[#1a1510] via-anthracite to-[#1a1510] px-3 py-2.5 text-center text-[11px] leading-snug text-white sm:gap-3 sm:text-[13px]"
+      >
+        <span
+          class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#25D366]/25 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-[#bdf7cf] ring-1 ring-[#25D366]/35 sm:text-[11px]"
+        >
+          Ücretsiz
+        </span>
+        <span class="max-[360px]:hidden">Yerinde keşif • Aynı gün yazılı ön bilgi • Gizli maliyet yok</span>
+        <span class="min-[361px]:hidden">Keşif ücretsiz — hemen yazın</span>
+        <a
+          href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          class="wa-cta shrink-0 font-bold text-brass-light underline decoration-brass-light/80 underline-offset-2 hover:text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Teklif al →</a
+        >
+      </div>
+
+    <header
+      class="w-full border-b border-anthracite/[0.06] bg-white/78 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/60"
+    >
+      <nav
+        class="mx-auto flex max-w-[92rem] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-12"
+      >
+        <a href="#" class="group relative flex flex-col gap-0.5">
+          <span
+            class="font-display text-[1.65rem] font-medium italic leading-none tracking-tight text-anthracite transition group-hover:text-brass-deep"
+            >Aura</span
+          >
+          <span
+            class="text-[10px] font-semibold uppercase tracking-[0.38em] text-brass-deep/90"
+            >Studio Seramik</span
+          >
+          <span
+            class="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-brass via-brass-light to-transparent transition-all duration-500 group-hover:w-full"
+            aria-hidden="true"></span>
+        </a>
+
+        <ul class="hidden items-center gap-1 md:flex lg:gap-2">
+          <li>
+            <a
+              href="#vitrin"
+              class="rounded-full px-4 py-2 text-[13px] font-semibold tracking-wide text-anthracite/65 transition hover:bg-anthracite/[0.04] hover:text-anthracite"
+              >Projeler</a
+            >
+          </li>
+          <li>
+            <a
+              href="#hizmetler"
+              class="rounded-full px-4 py-2 text-[13px] font-semibold tracking-wide text-anthracite/65 transition hover:bg-anthracite/[0.04] hover:text-anthracite"
+              >Hizmetler</a
+            >
+          </li>
+          <li>
+            <a
+              href="#galeri"
+              class="rounded-full px-4 py-2 text-[13px] font-semibold tracking-wide text-anthracite/65 transition hover:bg-anthracite/[0.04] hover:text-anthracite"
+              >Galeri</a
+            >
+          </li>
+          <li class="ml-2 pl-2 border-l border-anthracite/10">
+            <a
+              href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="wa-cta inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-white shadow-md ring-1 ring-black/10 transition hover:bg-[#20bd5a] hover:-translate-y-0.5"
+              ><i class="fa-brands fa-whatsapp text-[1.05rem]" aria-hidden="true"></i> WhatsApp Teklif</a
+            >
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          id="mobile-nav-btn"
+          class="flex size-11 items-center justify-center rounded-xl border border-anthracite/10 bg-white/80 shadow-sm md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Menüyü aç"
+        >
+          <i class="fa-solid fa-bars-staggered text-[17px]" aria-hidden="true"></i>
+        </button>
+      </nav>
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-anthracite/[0.06] bg-white/96 px-5 py-5 backdrop-blur-xl md:hidden"
+      >
+        <ul class="flex flex-col divide-y divide-anthracite/[0.06]">
+          <li>
+            <a href="#vitrin" class="mobile-link block py-3.5 text-[15px] font-semibold">Projeler</a>
+          </li>
+          <li>
+            <a href="#hizmetler" class="mobile-link block py-3.5 text-[15px] font-semibold">Hizmetler</a>
+          </li>
+          <li>
+            <a href="#galeri" class="mobile-link block py-3.5 text-[15px] font-semibold">Galeri</a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="wa-cta mobile-link mt-4 flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-4 text-center text-[15px] font-bold text-white"
+              ><i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Hemen teklif yaz</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    </div>
+
+    <!-- Hero (üst şerit + nav yüksekliği) -->
+    <section class="relative overflow-hidden pb-16 pt-[7.25rem] mesh-bg sm:pb-24 sm:pt-[8.25rem] lg:pb-28 lg:pt-[8.75rem] grain">
+      <div
+        class="pointer-events-none absolute left-1/2 top-[12%] h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,149,110,0.14)_0%,transparent_68%)] blur-2xl"
+      ></div>
+      <div
+        class="absolute right-[-20%] top-[40%] h-[280px] w-[280px] rounded-full bg-anthracite/[0.03] blur-3xl lg:right-[8%]"
+      ></div>
+
+      <div
+        class="relative z-10 mx-auto grid max-w-[92rem] items-center gap-12 px-5 sm:gap-16 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:px-12"
+      >
+        <div class="lg:col-span-5 xl:col-span-5">
+          <div
+            class="mb-7 inline-flex items-center gap-3 rounded-full border border-brass/25 bg-white/90 px-4 py-2 shadow-ringSoft backdrop-blur"
+          >
+            <span class="relative flex size-2 items-center justify-center" aria-hidden="true">
+              <span class="absolute size-2 rounded-full bg-emerald-500/90 animate-[shimmer_2.5s_ease-in-out_infinite]"></span>
+            </span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.28em] text-anthracite/75"
+              >Keşif & ölçüm — ücretsiz danışmanlık</span
+            >
+          </div>
+
+          <h1
+            class="font-display text-balance text-[2.65rem] font-medium italic leading-[1.05] tracking-tight text-anthracite sm:text-5xl lg:text-[3.55rem] xl:text-[4rem]"
+          >
+            Seramiği sanat olarak uyguluyor,<span class="mx-2 inline-block align-middle not-italic"
+              ><span
+                class="inline-block rounded-full bg-gradient-to-br from-brass via-brass-light to-brass-deep px-[0.6em] py-[0.08em] text-[0.28em] font-sans font-extrabold uppercase tracking-[0.35em] text-white shadow-inner shadow-black/20"
+                >premium</span
+              ></span
+            ><span class="font-normal not-italic text-brass-deep"> mekânları</span><br class="hidden sm:inline" /> inşa ediyoruz.
+          </h1>
+
+          <p class="mt-8 max-w-md text-[1.05rem] leading-[1.75] text-anthracite/58 sm:text-lg">
+            Keskin hatlar, zahmetsiz derz sürekliliği ve malzeme bilgisi. Islak hacimden mutfak
+            tezgâh arkasına — her detay görünür kalitede teslim edilir.
+          </p>
+
+          <div class="mt-11 flex flex-col gap-3.5 min-[400px]:flex-row min-[400px]:flex-wrap sm:gap-4">
+            <a
+              href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="wa-cta relative inline-flex flex-1 min-w-[200px] items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#25D366] px-8 py-[1.05rem] text-[15px] font-bold text-white shadow-[0_12px_40px_rgba(37,211,102,0.35)] ring-2 ring-[#25D366]/30 transition hover:-translate-y-0.5 hover:bg-[#20bd5a] hover:shadow-[0_16px_48px_rgba(37,211,102,0.4)] min-[400px]:flex-none sm:rounded-full"
+            >
+              <span class="flex size-8 items-center justify-center rounded-full bg-white/20">
+                <i class="fa-brands fa-whatsapp text-xl text-white" aria-hidden="true"></i>
+              </span>
+              Hemen WhatsApp’tan Teklif Yaz
+            </a>
+            <a
+              href="#vitrin"
+              class="inline-flex flex-1 min-w-[200px] items-center justify-center gap-2 rounded-2xl border-2 border-anthracite/12 bg-white/60 px-8 py-[0.9375rem] text-[15px] font-bold text-anthracite backdrop-blur transition hover:border-brass hover:text-brass-deep min-[400px]:flex-none sm:rounded-full"
+            >
+              Projeler slider
+              <i class="fa-solid fa-arrow-right -rotate-45 text-sm opacity-55" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <!-- Mini stats -->
+          <dl
+            class="mt-14 grid grid-cols-3 gap-4 rounded-3xl border border-anthracite/[0.07] bg-white/75 p-5 shadow-ringSoft backdrop-blur sm:inline-grid sm:p-7"
+          >
+            <div class="border-r border-anthracite/[0.08] pr-4 text-center last:border-0">
+              <dt class="text-[11px] font-bold uppercase tracking-widest text-anthracite/40">Tamamlanan</dt>
+              <dd class="mt-1 font-display text-2xl italic text-anthracite sm:text-[1.75rem]">200+</dd>
+              <dd class="text-[11px] text-anthracite/45">mekân</dd>
+            </div>
+            <div class="border-r border-anthracite/[0.08] px-2 text-center last:border-0">
+              <dt class="text-[11px] font-bold uppercase tracking-widest text-anthracite/40">Kalite</dt>
+              <dd class="mt-1 font-display text-2xl italic text-brass-deep sm:text-[1.75rem]">A+</dd>
+              <dd class="text-[11px] text-anthracite/45">işçilik</dd>
+            </div>
+            <div class="pl-4 text-center">
+              <dt class="text-[11px] font-bold uppercase tracking-widest text-anthracite/40">Öncelik</dt>
+              <dd class="mt-1 font-display text-2xl italic text-anthracite sm:text-[1.75rem]">Zamanında</dd>
+              <dd class="text-[11px] text-anthracite/45">teslim</dd>
+            </div>
+          </dl>
+
+          <!-- Dönüşüm: aciliyet + net yönlendirme -->
+          <div
+            class="mt-8 rounded-2xl border-2 border-brass/35 bg-gradient-to-br from-white via-paper to-brass-light/15 p-5 shadow-hover sm:mt-10 sm:p-6"
+          >
+            <p class="text-[11px] font-extrabold uppercase tracking-[0.28em] text-brass-deep">10 dakikada ön bilgi</p>
+            <p class="mt-2 font-display text-[1.35rem] font-medium italic leading-snug text-anthracite sm:text-2xl">
+              Fotoğraf + metrekare yazın — <span class="not-italic text-brass-deep">aynı gün geri dönelim.</span>
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <a
+                href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="wa-cta inline-flex items-center gap-2 rounded-full bg-anthracite px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-anthracite-soft"
+                ><i class="fa-brands fa-whatsapp text-[#4ade80]" aria-hidden="true"></i> Şimdi mesaj at</a
+              >
+              <span class="text-[12px] font-medium text-anthracite/50"
+                ><i class="fa-solid fa-check text-emerald-600" aria-hidden="true"></i> Gizli ücret yok</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual: stacked carousel -->
+        <div class="relative lg:col-span-7 xl:col-span-7">
+          <div
+            class="absolute -left-4 top-[18%] z-30 hidden lg:block xl:-left-8"
+            aria-hidden="true"
+          >
+            <div
+              class="flex h-[180px] w-px bg-gradient-to-b from-transparent via-brass/50 to-transparent"
+            ></div>
+            <span
+              class="mt-8 inline-block translate-x-[-0.35rem] whitespace-nowrap font-display text-xl font-semibold italic tracking-[0.55em] text-anthracite/[0.12] [writing-mode:vertical-rl]"
+              >seramik işçilik</span
+            >
+          </div>
+
+          <div
+            class="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-[2rem] border border-white/80 bg-white p-3 shadow-luxe shadow-anthracite/10 ring-2 ring-black/[0.02] sm:rounded-[2.35rem] sm:p-[11px] lg:max-w-none"
+          >
+            <span
+              class="wa-cta absolute left-7 top-7 z-[45] rounded-full bg-[#25D366] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white shadow-lg shadow-black/20 ring-2 ring-white/30 transition hover:scale-105 hover:bg-[#20bd5a] sm:left-auto sm:right-7 sm:text-[11px]"
+              href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i> Ücretsiz keşif
+            </span>
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-anthracite-soft sm:aspect-[16/11] lg:aspect-[16/10]"
+              id="hero-carousel"
+            >
+              <div class="hero-slide active absolute inset-0" data-hero-slide="0">
+                <img
+                  src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Modern banyo fayans ve seramik"
+                  class="hero-slide-img size-full object-cover sm:scale-105"
+                  width="1600"
+                  height="1067"
+                  loading="eager"
+                />
+              </div>
+              <div class="hero-slide absolute inset-0" data-hero-slide="1">
+                <img
+                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Lüks iç mekan mermer görünümlü yüzey"
+                  class="size-full object-cover"
+                  width="1600"
+                  height="1067"
+                  loading="lazy"
+                />
+              </div>
+              <div class="hero-slide absolute inset-0" data-hero-slide="2">
+                <img
+                  src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Çağdaş banyo ve fayans yüzeyleri"
+                  class="size-full object-cover"
+                  width="1600"
+                  height="1067"
+                  loading="lazy"
+                />
+              </div>
+              <div class="hero-slide absolute inset-0" data-hero-slide="3">
+                <img
+                  src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+                  alt="Açık plan zemin ve seramik döşeme"
+                  class="size-full object-cover"
+                  width="1600"
+                  height="1067"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Overlay -->
+              <div
+                class="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[45%] bg-gradient-to-t from-anthracite via-anthracite/40 to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap items-end justify-between gap-4 sm:bottom-8 sm:left-8 sm:right-8"
+              >
+                <div>
+                  <p
+                    id="hero-caption-title"
+                    class="font-display text-2xl font-medium italic tracking-tight text-white sm:text-3xl"
+                  >
+                    Sıcak yüzey, soğuk seramik
+                  </p>
+                  <p
+                    id="hero-caption-sub"
+                    class="mt-2 max-w-sm text-[13px] font-medium uppercase tracking-[0.2em] text-white/72"
+                  >
+                    Banyo komple yenileme
+                  </p>
+                  <a
+                    href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="wa-cta mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[12px] font-extrabold text-anthracite shadow-lg transition hover:bg-brass-light/90 hover:text-white"
+                  >
+                    <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
+                    Bu iş için yaz
+                  </a>
+                </div>
+                <div class="flex gap-2 rounded-full bg-white/12 p-1.5 backdrop-blur-md">
+                  <button
+                    type="button"
+                    id="hero-prev"
+                    class="flex size-10 items-center justify-center rounded-full bg-white/90 text-anthracite transition hover:bg-white"
+                    aria-label="Önceki görsel"
+                  >
+                    <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    type="button"
+                    id="hero-next"
+                    class="flex size-10 items-center justify-center rounded-full bg-white/90 text-anthracite transition hover:bg-white"
+                    aria-label="Sonraki görsel"
+                  >
+                    <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            <div
+              class="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-auto sm:left-auto sm:right-8 sm:top-8 sm:translate-x-0"
+              id="hero-dots"
+                role="tablist"
+                aria-label="Hero görselleri"
+              ></div>
+            </div>
+
+            <!-- Floating badges -->
+            <div
+              class="absolute -bottom-6 -right-2 z-40 hidden rounded-3xl border border-white/70 bg-white/95 px-5 py-4 shadow-hover backdrop-blur sm:block sm:right-6 lg:-right-4"
+            >
+              <p class="text-[11px] font-bold uppercase tracking-widest text-anthracite/40">Premium seri</p>
+              <p class="mt-1 font-display text-xl italic text-anthracite">İtalyan & Yerli seçenekler</p>
+              <div class="mt-3 flex gap-2">
+                <span class="badge-pill rounded-full bg-cream px-3 py-1 text-[11px] font-semibold text-anthracite/70"
+                  >60×120</span
+                >
+                <span class="badge-pill rounded-full bg-cream px-3 py-1 text-[11px] font-semibold text-anthracite/70"
+                  >Granit görünüm</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 adım: doğrudan teklife götürür -->
+    <section class="relative z-[5] -mt-8 border-y border-black/[0.05] bg-white py-14 shadow-hover sm:-mt-10 sm:py-16">
+      <div class="mx-auto max-w-[92rem] px-5 sm:px-8 lg:px-12">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-lg">
+            <span class="text-[11px] font-bold uppercase tracking-[0.35em] text-brass-deep">Nasıl ilerleriz?</span>
+            <h2 class="font-display mt-3 text-3xl font-medium italic text-anthracite sm:text-4xl">
+              Üç kısa adım — sonra <span class="text-brass-deep not-italic">net teklif.</span>
+            </h2>
+          </div>
+          <a
+            href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+            class="wa-cta inline-flex items-center justify-center gap-2 self-start rounded-2xl bg-[#25D366] px-8 py-4 text-[15px] font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:scale-[1.02] hover:bg-[#20bd5a] lg:self-center"
+            ><i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i> Doğrudan WhatsApp’a geç</a
+          >
+        </div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-3">
+          <article class="group overflow-hidden rounded-2xl border border-black/[0.06] bg-paper shadow-ringSoft">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+                alt="Fotoğraf ile iletişim"
+                class="size-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-brass-deep">Adım 1</span>
+              <h3 class="mt-1 font-display text-xl italic text-anthracite">WhatsApp’a foto gönder</h3>
+              <p class="mt-2 text-[13px] leading-relaxed text-anthracite/58">Alan ve yaklaşık metrekare — netleştirmeye yardım eder.</p>
+            </div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-black/[0.06] bg-paper shadow-ringSoft">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+                alt="İç mekan ölçü ve planlama"
+                class="size-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-brass-deep">Adım 2</span>
+              <h3 class="mt-1 font-display text-xl italic text-anthracite">Biz geri yazalım</h3>
+              <p class="mt-2 text-[13px] leading-relaxed text-anthracite/58">Eksik bilgi varsa sorarız — beklemezsiniz.</p>
+            </div>
+          </article>
+          <article class="group overflow-hidden rounded-2xl border border-black/[0.06] bg-paper shadow-ringSoft">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+                alt="Teslim ve sonuç"
+                class="size-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-bold text-brass-deep">Adım 3</span>
+              <h3 class="mt-1 font-display text-xl italic text-anthracite">Yerinde keşif + teklif</h3>
+              <p class="mt-2 text-[13px] leading-relaxed text-anthracite/58">Ücretsiz yerinde görüş — ardından net rakam.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-width featured slider -->
+    <section id="vitrin" class="relative border-y border-anthracite/[0.06] bg-anthracite py-16 text-white grain sm:py-20">
+      <div class="relative z-[2] mx-auto max-w-[92rem] px-5 pb-10 sm:px-8 lg:px-12">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-xl">
+            <span
+              class="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.42em] text-brass-light/90"
+            >
+              <span class="h-px w-10 bg-gradient-to-r from-brass-light to-transparent" aria-hidden="true"></span>
+              Seçilmiş çalışmalar
+            </span>
+            <h2 class="font-display mt-6 text-[2.75rem] font-medium italic leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+              Her kare,<br /><span class="text-brass-light not-italic">ölçülü teslim.</span>
+            </h2>
+            <p class="mt-5 max-w-xl text-[15px] leading-relaxed text-white/62">
+              Beğendiğiniz görseli WhatsApp ile paylaşın — aynı doku ve seri için doğrudan fiyat aralığı konuşalım.
+            </p>
+          </div>
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+              class="wa-cta inline-flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-7 py-4 text-[14px] font-bold text-white shadow-lg transition hover:bg-[#20bd5a]"
+              ><i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i> Örnek gibi iş istiyorum</a
+            >
+            <div class="flex flex-wrap gap-4">
+            <button
+              type="button"
+              id="featured-prev"
+              class="flex size-12 items-center justify-center rounded-2xl border border-white/15 bg-white/5 text-white transition hover:bg-white hover:text-anthracite"
+              aria-label="Önceki slayt"
+            >
+              <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              id="featured-next"
+              class="flex size-12 items-center justify-center rounded-2xl border border-brass-light/35 bg-brass-deep/70 text-white transition hover:bg-brass-light hover:text-anthracite"
+              aria-label="Sonraki slayt"
+            >
+              <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative z-[2] overflow-hidden pb-14"
+        role="region"
+        aria-roledescription="carousel"
+        aria-labelledby="featured-heading"
+      >
+        <h3 id="featured-heading" class="sr-only">Proje görsel carousel</h3>
+
+        <!-- Side fade masks -->
+        <div
+          class="pointer-events-none absolute inset-y-0 left-0 z-30 w-12 bg-gradient-to-r from-anthracite to-transparent sm:w-24"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 z-30 w-12 bg-gradient-to-l from-anthracite to-transparent sm:w-24"
+        ></div>
+
+        <div id="featured-viewport" class="relative cursor-grab active:cursor-grabbing">
+          <div
+            id="featured-track"
+            class="slider-track flex touch-pan-y"
+          >
+            <!-- Slides injected style: each ~85vw on mobile, ~70vw md, ~62vw xl -->
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="mx-auto mt-12 max-w-[92rem] px-5 sm:px-8 lg:px-12">
+          <div class="relative h-[3px] w-full rounded-full bg-white/10 overflow-hidden">
+            <div
+              id="featured-progress"
+              class="absolute left-0 top-0 h-full w-[16.66%] rounded-full bg-gradient-to-r from-brass-deep via-brass-light to-brass transition-[width]"
+            ></div>
+          </div>
+          <div class="mt-5 flex justify-between text-[13px] text-white/42">
+            <span id="featured-counter">01 / 06</span>
+            <button
+              type="button"
+              id="featured-autopause"
+              class="rounded-full border border-white/15 px-4 py-1.5 font-semibold uppercase tracking-wider hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+              aria-pressed="true"
+            >
+              Duraklat
+            </button>
+          </div>
+          <p class="sr-only" id="featured-live" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services bento-ish -->
+    <section id="hizmetler" class="relative border-b border-anthracite/[0.06] bg-cream mesh-bg py-20 sm:py-28 grain">
+      <div class="mx-auto max-w-[92rem] px-5 sm:px-8 lg:px-12">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span class="font-mono text-xs font-semibold uppercase tracking-[0.35em] text-brass-deep"
+              >01 — Hizmetler</span
+            >
+            <h2
+              class="font-display mt-5 max-w-[18ch] text-[2.5rem] font-medium italic tracking-tight text-anthracite sm:text-[3.35rem]"
+            >
+              Eksiksiz yüzey stratejisi
+            </h2>
+          </div>
+          <p class="max-w-md text-[1.0625rem] leading-relaxed text-anthracite/55 lg:text-right">
+            Malzemeyi siz seçin ya da birlikte gidelim. Ölçü, yüzey ve su teması hep birlikte
+            kurgulanır.
+          </p>
+        </div>
+
+        <div
+          class="-mx-5 mt-12 flex gap-2 overflow-x-auto pb-1 sm:-mx-8 sm:gap-3 lg:-mx-12 lg:px-0"
+          aria-hidden="true"
+        >
+          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=320&amp;fit=crop" alt="" class="h-28 w-48 shrink-0 rounded-2xl object-cover ring-1 ring-black/10" width="500" height="320" loading="lazy" />
+          <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=320&amp;fit=crop" alt="" class="h-28 w-48 shrink-0 rounded-2xl object-cover ring-1 ring-black/10" width="500" height="320" loading="lazy" />
+          <img src="https://images.pexels.com/photos/6480707/pexels-photo-6480707.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=320&amp;fit=crop" alt="" class="h-28 w-48 shrink-0 rounded-2xl object-cover ring-1 ring-black/10" width="500" height="320" loading="lazy" />
+          <img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=320&amp;fit=crop" alt="" class="h-28 w-48 shrink-0 rounded-2xl object-cover ring-1 ring-black/10" width="500" height="320" loading="lazy" />
+          <img src="https://images.pexels.com/photos/1358900/pexels-photo-1358900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=320&amp;fit=crop" alt="" class="h-28 w-48 shrink-0 rounded-2xl object-cover ring-1 ring-black/10" width="500" height="320" loading="lazy" />
+        </div>
+
+        <div class="mt-16 grid gap-5 lg:grid-cols-12 lg:gap-6">
+          <article
+            class="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-anthracite p-[2rem] text-white shadow-luxe lg:col-span-5 min-h-[360px]"
+          >
+            <div
+              class="absolute inset-0 opacity-[0.18] grayscale mix-blend-overlay bg-cover bg-center transition duration-[1.4s] group-hover:scale-105 group-hover:opacity-[0.24]"
+              style="background-image: url(https://images.pexels.com/photos/1358900/pexels-photo-1358900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200)"
+              aria-hidden="true"
+            ></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent" aria-hidden="true"></div>
+
+            <div class="relative z-10 flex items-start justify-between gap-6">
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur"
+              >
+                <i class="fa-solid fa-border-all text-xl text-brass-light" aria-hidden="true"></i>
+              </div>
+              <span class="rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest">
+                Talep fazı
+              </span>
+            </div>
+            <div class="relative z-10 mt-auto">
+              <h3 class="font-display text-3xl italic">Fayans & seramik döşeme</h3>
+              <p class="mt-5 max-w-sm text-[15px] leading-[1.7] text-white/72">
+                Duvar-zemin uyumu, büyük format ve dar alan profesyoneli. Islak bölgelerde standartların üstünde iş.
+              </p>
+              <a
+                href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="wa-cta mt-8 inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.2em] text-brass-light transition hover:text-white"
+              >
+                Bu hizmeti sor
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] opacity-80" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <div class="flex flex-col gap-5 lg:col-span-7">
+            <article
+              class="group grid gap-0 overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-ringSoft backdrop-blur transition hover:shadow-hover md:grid-cols-[1fr_minmax(0,42%)]"
+            >
+              <div class="flex flex-col justify-center p-8 sm:p-10">
+                <div class="flex flex-wrap items-start justify-between gap-6">
+                  <div
+                    class="flex size-14 items-center justify-center rounded-2xl bg-cream ring-2 ring-black/[0.04] transition group-hover:bg-anthracite group-hover:text-brass-light"
+                  >
+                    <i class="fa-solid fa-droplet-slash text-xl text-brass-deep" aria-hidden="true"></i>
+                  </div>
+                  <span class="text-[72px] font-display leading-none text-anthracite/[0.06] italic">02</span>
+                </div>
+                <h3 class="relative z-10 mt-6 font-display text-2xl italic text-anthracite">Banyo komple yenileme</h3>
+                <p class="relative z-10 mt-4 max-w-xl text-[15px] leading-[1.75] text-anthracite/58">
+                  Söküm düzeni, sıva ve kritik su yalıtımı dahil süreç. Seramikten önce yüzey; seramikten sonra temiz çıkış.
+                </p>
+                <a
+                  href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="wa-cta mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-anthracite px-5 py-2.5 text-[12px] font-bold uppercase tracking-wider text-white transition hover:bg-anthracite-soft"
+                  ><i class="fa-brands fa-whatsapp text-[#4ade80]" aria-hidden="true"></i> Bu iş için yaz</a
+                >
+              </div>
+              <div class="relative min-h-[220px] overflow-hidden bg-cream md:min-h-[260px]">
+                <img
+                  src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                  alt="Banyo seramik referans görseli"
+                  class="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </div>
+            </article>
+
+            <article
+              class="group grid gap-0 overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-ringSoft backdrop-blur transition hover:shadow-hover md:grid-cols-[1fr_minmax(0,42%)]"
+            >
+              <div class="flex flex-col justify-center p-8 sm:p-10">
+                <div class="flex flex-wrap items-start justify-between gap-6">
+                  <div
+                    class="flex size-14 items-center justify-center rounded-2xl bg-cream ring-2 ring-black/[0.04] transition group-hover:bg-anthracite group-hover:text-brass-light"
+                  >
+                    <i class="fa-solid fa-fire-burner text-xl text-brass-deep" aria-hidden="true"></i>
+                  </div>
+                  <span class="text-[72px] font-display leading-none text-anthracite/[0.06] italic">03</span>
+                </div>
+                <h3 class="relative z-10 mt-6 font-display text-2xl italic text-anthracite">Mutfak tezgâh arası</h3>
+                <p class="relative z-10 mt-4 max-w-xl text-[15px] leading-[1.75] text-anthracite/58">
+                  Minimal derz kalınlığı, köşe itişleri ve sıcak yüzeye uygun seramik. Pratik günlük kullanımla uyumlu.
+                </p>
+                <a
+                  href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="wa-cta mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-anthracite px-5 py-2.5 text-[12px] font-bold uppercase tracking-wider text-white transition hover:bg-anthracite-soft"
+                  ><i class="fa-brands fa-whatsapp text-[#4ade80]" aria-hidden="true"></i> Mutfak için yaz</a
+                >
+              </div>
+              <div class="relative min-h-[220px] overflow-hidden bg-cream md:order-first md:min-h-[260px]">
+                <img
+                  src="https://images.pexels.com/photos/6480707/pexels-photo-6480707.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                  alt="Modern mutfak ve tezgâh arkası"
+                  class="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  width="900"
+                  height="1200"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery mosaic -->
+    <section id="galeri" class="border-t border-white/70 bg-white py-20 sm:py-28">
+      <div class="mx-auto max-w-[92rem] px-5 sm:px-8 lg:px-12">
+        <div class="flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <span class="font-mono text-xs font-semibold uppercase tracking-[0.35em] text-brass-deep"
+              >02 — Galeri</span
+            >
+            <h2 class="font-display mt-5 text-[2.5rem] font-medium italic tracking-tight sm:text-[3.25rem]">
+              Doku & ışık
+            </h2>
+          </div>
+          <a
+            href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wa-cta hidden items-center gap-2 rounded-full bg-anthracite px-7 py-3.5 text-[14px] font-bold text-white ring-4 ring-black/[0.03] transition hover:-translate-y-0.5 sm:inline-flex"
+          >
+            Benzer proje için yaz
+            <i class="fa-brands fa-whatsapp text-lg text-emerald-300" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="mt-8 flex gap-2 overflow-x-auto pb-2 sm:gap-3" role="list">
+          <img role="listitem" src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=260&amp;fit=crop" alt="" class="h-20 w-36 shrink-0 rounded-xl object-cover ring-1 ring-black/5 sm:h-24 sm:w-44" width="400" height="260" loading="lazy" />
+          <img role="listitem" src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=260&amp;fit=crop" alt="" class="h-20 w-36 shrink-0 rounded-xl object-cover ring-1 ring-black/5 sm:h-24 sm:w-44" width="400" height="260" loading="lazy" />
+          <img role="listitem" src="https://images.pexels.com/photos/1358900/pexels-photo-1358900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=260&amp;fit=crop" alt="" class="h-20 w-36 shrink-0 rounded-xl object-cover ring-1 ring-black/5 sm:h-24 sm:w-44" width="400" height="260" loading="lazy" />
+          <img role="listitem" src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=260&amp;fit=crop" alt="" class="h-20 w-36 shrink-0 rounded-xl object-cover ring-1 ring-black/5 sm:h-24 sm:w-44" width="400" height="260" loading="lazy" />
+          <img role="listitem" src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=400&amp;h=260&amp;fit=crop" alt="" class="h-20 w-36 shrink-0 rounded-xl object-cover ring-1 ring-black/5 sm:h-24 sm:w-44" width="400" height="260" loading="lazy" />
+        </div>
+
+        <div
+          class="mt-10 columns-1 gap-4 sm:columns-2 lg:gap-6 xl:columns-3"
+          role="list"
+        >
+          <figure
+            class="group mb-4 break-inside-avoid overflow-hidden rounded-[1.65rem] border border-black/[0.04] shadow-hover lg:mb-6"
+          >
+            <div class="relative aspect-[16/11] overflow-hidden bg-cream">
+              <img
+                src="https://images.pexels.com/photos/6480707/pexels-photo-6480707.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Mutfak tezgâh arkası"
+                class="size-full object-cover transition duration-[1.1s] group-hover:scale-[1.035]"
+                loading="lazy"
+                width="800"
+                height="550"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-black/15 opacity-0 transition group-hover:opacity-100"
+              ></div>
+            </div>
+            <figcaption class="border-t border-black/[0.04] px-6 py-4">
+              <span class="text-[13px] font-bold uppercase tracking-widest text-anthracite/35">mutfak</span>
+              <p class="mt-2 font-display text-xl italic">Tezgâh çizgisi & mat yüzey</p>
+            </figcaption>
+          </figure>
+
+          <figure
+            class="group mb-4 break-inside-avoid overflow-hidden rounded-[1.65rem] border border-black/[0.04] shadow-hover lg:mb-6"
+          >
+            <div class="relative aspect-[3/4] overflow-hidden bg-cream">
+              <img
+                src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                alt="Seramik doku yakın çekim"
+                class="size-full object-cover transition duration-[1.1s] group-hover:scale-[1.035]"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="border-t border-black/[0.04] px-6 py-4">
+              <span class="text-[13px] font-bold uppercase tracking-widest text-anthracite/35">mat / parlak</span>
+              <p class="mt-2 font-display text-xl italic">Örnek doku koleksiyonu</p>
+            </figcaption>
+          </figure>
+
+          <figure
+            class="group mb-4 break-inside-avoid overflow-hidden rounded-[1.65rem] border border-black/[0.04] shadow-hover lg:mb-6"
+          >
+            <div class="relative aspect-square overflow-hidden bg-cream">
+              <img
+                src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+                alt="Mavi tonlu banyo fayans"
+                class="size-full object-cover transition duration-[1.1s] group-hover:scale-[1.035]"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="border-t border-black/[0.04] px-6 py-4">
+              <span class="text-[13px] font-bold uppercase tracking-widest text-anthracite/35">banyo</span>
+              <p class="mt-2 font-display text-xl italic">Renk derinliği</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group mb-4 break-inside-avoid overflow-hidden rounded-[1.65rem] border border-black/[0.04] shadow-hover lg:mb-6">
+            <div class="relative aspect-[21/13] overflow-hidden bg-cream">
+              <img
+                src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400"
+                alt="Geniş zemin görünümü"
+                class="size-full object-cover transition duration-[1.1s] group-hover:scale-[1.035]"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="border-t border-black/[0.04] px-6 py-4">
+              <span class="text-[13px] font-bold uppercase tracking-widest text-anthracite/35">zemin</span>
+              <p class="mt-2 font-display text-xl italic">Büyük plaka hissiyatı</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group mb-4 break-inside-avoid overflow-hidden rounded-[1.65rem] border border-black/[0.04] shadow-hover lg:mb-6">
+            <div class="relative aspect-[16/12] overflow-hidden bg-cream">
+              <img
+                src="https://images.pexels.com/photos/1556911/pexels-photo-1556911.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Şık mutfak iç mekân"
+                class="size-full object-cover transition duration-[1.1s] group-hover:scale-[1.035]"
+                loading="lazy"
+                width="1200"
+                height="900"
+              />
+            </div>
+            <figcaption class="border-t border-black/[0.04] px-6 py-4">
+              <span class="text-[13px] font-bold uppercase tracking-widest text-anthracite/35">yaşam</span>
+              <p class="mt-2 font-display text-xl italic">Ferah mutfak hattı</p>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <a
+          href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wa-cta mt-10 inline-flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-[#25D366]/40 bg-[#25D366]/10 py-4 text-[14px] font-bold text-anthracite sm:hidden"
+        >
+          WhatsApp ile sor
+          <i class="fa-brands fa-whatsapp text-[#25D366]" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      id="iletisim"
+      class="relative border-t border-white/10 bg-gradient-to-br from-[#16171a] via-anthracite to-[#0e0f11] py-16 text-white grain overflow-hidden md:py-24"
+    >
+      <div
+        class="pointer-events-none absolute -right-[20%] top-[-20%] h-[420px] w-[420px] rounded-full bg-brass/[0.06] blur-3xl"
+      ></div>
+
+      <div class="relative z-10 mx-auto max-w-[92rem] px-5 text-center lg:px-12">
+        <span class="text-[11px] font-bold uppercase tracking-[0.45em] text-brass-light/85">Son adım</span>
+        <h2 class="font-display mx-auto mt-8 max-w-2xl text-[2.6rem] font-medium italic tracking-tight sm:text-5xl">
+          Projenizi netleştirelim,<br /><span class="text-brass-light not-italic">aynı gün içinde dönelim.</span>
+        </h2>
+        <p class="mx-auto mt-7 max-w-lg text-[1.0625rem] leading-relaxed text-white/54">
+          Fotoğraf, yaklaşık metrekare ve konum yazmanız süreci hızlandırır. Sabit düğmemiz veya butonların herhangi birinden yazabilirsiniz.
+        </p>
+
+        <a
+          href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20fayans%20i%C5%9Fleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wa-cta mx-auto mt-12 inline-flex items-center gap-4 rounded-[1.35rem] bg-[#25D366] px-12 py-5 text-[17px] font-bold text-white shadow-[0_28px_60px_-12px_rgba(37,211,102,0.45)] ring-8 ring-black/20 transition hover:scale-[1.02]"
+        >
+          <i class="fa-brands fa-whatsapp text-[2rem]" aria-hidden="true"></i>
+          WhatsApp ile bağlan
+        </a>
+
+        <div
+          class="mt-20 flex flex-col items-center justify-center gap-y-5 border-t border-white/10 pt-12 text-[13px] text-white/35 sm:flex-row sm:gap-x-10"
+        >
+          <span>© <span id="year"></span> Aura Studio Seramik</span>
+          <span aria-hidden="true" class="hidden sm:inline opacity-35">/</span>
+          <span>Yerel tasarımcılarla uyumlu çalışma</span>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      @keyframes slowZoom {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.06);
+        }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-slide.active .hero-slide-img {
+          animation: slowZoom 28s ease-in-out infinite alternate;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-slide img {
+          animation: none !important;
+        }
+      }
+    </style>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      try {
+        const u = window.WA_CHAT_URL;
+        if (typeof u === "string" && u.indexOf("http") === 0) {
+          document.querySelectorAll("a.wa-cta").forEach(function (el) {
+            el.href = u;
+          });
+        }
+      } catch (e) {}
+
+      (function () {
+        const bar = document.getElementById("sticky-quote-bar");
+        const footer = document.getElementById("iletisim");
+        if (!bar || !footer) return;
+        let ticking = false;
+        function updateBar() {
+          ticking = false;
+          const scrollY = window.scrollY || 0;
+          const fr = footer.getBoundingClientRect();
+          const footerSoon = fr.top < window.innerHeight * 0.92;
+          if (scrollY > 280 && !footerSoon) bar.classList.add("is-visible");
+          else bar.classList.remove("is-visible");
+        }
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              ticking = true;
+              requestAnimationFrame(updateBar);
+            }
+          },
+          { passive: true },
+        );
+        updateBar();
+      })();
+
+      /* Reduced motion */
+      const reduceMotion =
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.documentElement.setAttribute("data-motion", reduceMotion ? "reduce" : "ok");
+
+      /* Mobile nav */
+      const mobileBtn = document.getElementById("mobile-nav-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileBtn?.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("hidden") === false;
+        mobileBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        mobileBtn.setAttribute("aria-label", open ? "Menüyü kapat" : "Menüyü aç");
+      });
+      document.querySelectorAll(".mobile-link").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileBtn.setAttribute("aria-expanded", "false");
+          mobileBtn.setAttribute("aria-label", "Menüyü aç");
+        }),
+      );
+
+      /* ===== Hero carousel ===== */
+      const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+      const heroData = [
+        { title: "Sıcak yüzey, soğuk seramik", sub: "Banyo komple yenileme" },
+        { title: "Hatlar kusursuz hizalı", sub: "Büyük format duvar-zemin" },
+        { title: "Işıkta oynayan doku", sub: "Mozaik ve detay" },
+        { title: "Açık yaşam zemini", sub: "Uygulama & parlak çıkış" },
+      ];
+
+      let heroIndex = 0;
+      let heroTimer = null;
+
+      function heroShow(i) {
+        heroIndex = (i + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach((el, idx) => el.classList.toggle("active", idx === heroIndex));
+        document.getElementById("hero-caption-title").textContent = heroData[heroIndex].title;
+        document.getElementById("hero-caption-sub").textContent = heroData[heroIndex].sub;
+      }
+
+      const dotsWrap = document.getElementById("hero-dots");
+      heroSlides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className =
+          "h-2 rounded-full bg-white transition-all duration-500 " +
+          (i === 0 ? "w-10 opacity-100" : "w-2 opacity-45 hover:opacity-80");
+        b.setAttribute("aria-label", "Slayt " + (i + 1));
+        b.addEventListener("click", () => {
+          heroShow(i);
+          resetHeroLoop();
+          updateHeroDots();
+        });
+        dotsWrap.appendChild(b);
+      });
+
+      function updateHeroDots() {
+        [...dotsWrap.children].forEach((btn, idx) => {
+          btn.className =
+            "h-2 rounded-full bg-white transition-all duration-500 " +
+            (idx === heroIndex ? "w-10 opacity-100" : "w-2 opacity-45 hover:opacity-80");
+        });
+      }
+
+      function heroAdvance() {
+        heroShow(heroIndex + 1);
+        updateHeroDots();
+      }
+
+      function resetHeroLoop() {
+        clearInterval(heroTimer);
+        if (!reduceMotion) {
+          heroTimer = setInterval(heroAdvance, 5200);
+        }
+      }
+
+      document.getElementById("hero-prev").addEventListener("click", () => {
+        heroShow(heroIndex - 1);
+        updateHeroDots();
+        resetHeroLoop();
+      });
+      document.getElementById("hero-next").addEventListener("click", () => {
+        heroAdvance();
+        resetHeroLoop();
+      });
+      resetHeroLoop();
+
+      /* ===== Featured slider (wide cards) ===== */
+      const FEATURED = [
+        {
+          src: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Modern banyo çizgileri — kusursuz derz",
+          tag: "Banyo",
+        },
+        {
+          src: "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Salon zemini sürekliliği",
+          tag: "Zemin",
+        },
+        {
+          src: "https://images.pexels.com/photos/6480707/pexels-photo-6480707.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Mutfak tezgâh arkası — sıcak yüzeye uygun",
+          tag: "Mutfak",
+        },
+        {
+          src: "https://images.pexels.com/photos/1358900/pexels-photo-1358900.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Büyük format duvar yüzeyi",
+          tag: "Detay",
+        },
+        {
+          src: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Islak hacim — komple teslim görünümü",
+          tag: "Komple",
+        },
+        {
+          src: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          title: "Konut oturması — sıcak ışıkta seramik",
+          tag: "Konut",
+        },
+      ];
+
+      const track = document.getElementById("featured-track");
+      const viewport = document.getElementById("featured-viewport");
+      const progress = document.getElementById("featured-progress");
+      const counter = document.getElementById("featured-counter");
+      const live = document.getElementById("featured-live");
+
+      FEATURED.forEach((item, index) => {
+        const slide = document.createElement("article");
+        slide.className =
+          "relative shrink-0 pl-5 sm:pl-8 md:pl-[3.25vw] first:pl-8 lg:first:pl-12 xl:first:pl-16";
+        const safe = (s) =>
+          String(s)
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;");
+
+        slide.innerHTML =
+          `
+          <div class="slide-card group relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.04] shadow-[0_48px_100px_-20px_rgba(0,0,0,.55)]">
+            <div class="aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-anthracite-soft">
+              <img src="${item.src}" alt="${safe(item.title)}" class="size-full object-cover transition duration-[1.4s] ease-out group-hover:scale-[1.03]" loading="${index === 0 ? "eager" : "lazy"}"/>
+            </div>
+            <div class="slide-caption-bar absolute bottom-0 left-0 right-0 flex flex-wrap items-center justify-between gap-4 px-8 py-6 sm:py-8">
+              <div>
+                <p class="text-[11px] font-bold uppercase tracking-[0.32em] text-brass-light/90">${safe(item.tag)}</p>
+                <p class="font-display mt-2 text-xl italic tracking-tight text-white sm:text-2xl">${safe(item.title)}</p>
+              </div>
+              <span class="flex size-12 items-center justify-center rounded-full border border-white/20 text-white"><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+          </div>
+        `;
+
+        const img = slide.querySelector(".slide-card img");
+        if (img) img.dataset.index = String(index);
+        track.appendChild(slide);
+      });
+
+      function slideWidthPx() {
+        const first =
+          /** @type {HTMLElement} */
+          (track.children[0]);
+        if (!first) return viewport.clientWidth * 0.86;
+        return first.getBoundingClientRect().width;
+      }
+
+      let fi = 0;
+      let autoPlay = true;
+      let autopauseBtn = document.getElementById("featured-autopause");
+      let featuredTimer;
+
+      function setTrackPosition() {
+        const w = slideWidthPx();
+        const offset = -(fi * w);
+        track.style.transform = `translate3d(${offset}px, 0, 0)`;
+        progress.style.width =
+          FEATURED.length > 0 ? `${((fi + 1) / FEATURED.length) * 100}%` : "100%";
+        const label = `${String(fi + 1).padStart(2, "0")} / ${String(FEATURED.length).padStart(2, "0")}`;
+        counter.textContent = label;
+        if (live) live.textContent = `Slayt ${fi + 1} / ${FEATURED.length}`;
+        track.dataset.index = String(fi);
+      }
+
+      function clampIndex(next) {
+        return Math.min(FEATURED.length - 1, Math.max(0, next));
+      }
+
+      function goFeatured(nextIndex) {
+        fi = clampIndex(nextIndex);
+        setTrackPosition();
+      }
+
+      function nextFeatured() {
+        if (fi < FEATURED.length - 1) goFeatured(fi + 1);
+        else goFeatured(0);
+      }
+
+      function prevFeatured() {
+        if (fi > 0) goFeatured(fi - 1);
+        else goFeatured(FEATURED.length - 1);
+      }
+
+      function resetFeaturedAutoplay() {
+        clearInterval(featuredTimer);
+        if (!reduceMotion && autoPlay) {
+          featuredTimer = setInterval(nextFeatured, 6400);
+        }
+      }
+
+      document.getElementById("featured-next").addEventListener("click", () => {
+        nextFeatured();
+        resetFeaturedAutoplay();
+      });
+      document.getElementById("featured-prev").addEventListener("click", () => {
+        prevFeatured();
+        resetFeaturedAutoplay();
+      });
+
+      autopauseBtn?.addEventListener("click", () => {
+        if (reduceMotion) return;
+        autoPlay = !autoPlay;
+        autopauseBtn.setAttribute("aria-pressed", autoPlay ? "true" : "false");
+        autopauseBtn.textContent = autoPlay ? "Duraklat" : "Otomatik oynat";
+        if (!autoPlay) clearInterval(featuredTimer);
+        else resetFeaturedAutoplay();
+      });
+
+      if (reduceMotion) {
+        if (autopauseBtn) {
+          autopauseBtn.textContent = "Otomatik kapalı";
+          autopauseBtn.setAttribute("aria-pressed", "false");
+          autopauseBtn.disabled = true;
+        }
+      }
+
+      /** Drag swipe */
+      let down = false;
+      let sx = 0;
+      viewport.addEventListener("pointerdown", (e) => {
+        down = true;
+        sx = e.clientX;
+        viewport.setPointerCapture(e.pointerId);
+      });
+      viewport.addEventListener("pointerup", (e) => {
+        if (!down) return;
+        down = false;
+        const dx = e.clientX - sx;
+        if (dx < -42) nextFeatured(), resetFeaturedAutoplay();
+        if (dx > 42) prevFeatured(), resetFeaturedAutoplay();
+      });
+      viewport.addEventListener("pointercancel", () => {
+        down = false;
+      });
+
+      /** Resize slides width */
+      function layoutSlides() {
+        const wPerc =
+          window.innerWidth >= 1280 ? "62vw" : window.innerWidth >= 768 ? "70vw" : "86vw";
+        [...track.children].forEach((el) => {
+          el.style.width = wPerc;
+        });
+        setTrackPosition();
+      }
+
+      window.addEventListener("resize", layoutSlides);
+
+      fi = 0;
+      resetFeaturedAutoplay();
+      queueMicrotask(() => layoutSlides());
+
+      document.addEventListener("keydown", (e) => {
+        const vitrin = document.getElementById("vitrin");
+        if (!vitrin || !vitrin.getBoundingClientRect) return;
+        const r = vitrin.getBoundingClientRect();
+        const onScreen = r.top < window.innerHeight && r.bottom > 0;
+        if (!onScreen) return;
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          nextFeatured();
+          resetFeaturedAutoplay();
+        }
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          prevFeatured();
+          resetFeaturedAutoplay();
+        }
+      });
+    </script>
+  </body>
+</html>
