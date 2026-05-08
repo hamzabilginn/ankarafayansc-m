@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ankarafayanscim.vercel.app/sitemap.xml
+Sitemap: https://kecioren-fayans-ustasi.vercel.app/sitemap.xml
