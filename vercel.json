@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ankarafayanscim.vercel.app"
+        }
+      ],
+      "destination": "https://kecioren-fayans-ustasi.vercel.app/$1",
+      "permanent": true
+    }
+  ]
+}
